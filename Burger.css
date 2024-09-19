@@ -1,11 +1,90 @@
-.body {
-    display: flex;
-    display: flex;
+* {
+
+    margin: 0;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: bolder;
 }
 
 
-.h1 {
-    justify-content: center;
+
+.burger_redbox {
+    display: flex;
+    justify-content: space-between;
+color: white;
+background-color: red;
+min-height: 25rem;
+max-width: 100%;
+
+}
+
+.holding_picture {
+display: flex;
+align-items: center;
+justify-content: center;
+   min-width: 50%;
+   max-height: 100%;
+   
+}
+
+.picture {
+
+    height: 15rem;
+    width: 15rem;
+    display: flex;
+    object-fit: cover;
+}
+
+.text {
+    min-width: 50%;
+    max-height: 100%;
+    display: flex;
     align-items: center;
+    font-size: xx-large;
+}
+
+.heading {
+    text-align: center;
+    max-width: 100%;
+    padding: 2rem;
+    color: red;
+}
+
+.burger_cards {
+    display: flex;
+    justify-content: space-evenly;
+    min-height: 30rem;
+    max-width: 100%;
+    color: red;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    min-height: 10rem;
+    max-width: 15rem;
+    padding: 2rem;
+    margin-left: 2rem;
+}
+
+.card img {
+    width: 100%;
+    height: 50%;
+   object-fit: contain;
+   background-color: antiquewhite;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
     
+}
+
+.contain_text {
+    width: 100%;
+    padding-top: 0.5rem;
+    text-align: center;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.link {
+    text-decoration: none;
+    color: red;
 }
