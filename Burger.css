@@ -6,6 +6,56 @@
 }
 
 
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    position: relative;
+}
+
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+.left-nav {
+    margin-right: auto;
+}
+
+.right-nav {
+    margin-left: auto;
+}
+
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 24px;
+    padding: 8px;
+    transition: background-color 0.3s ease; 
+}
+
+
+nav a:hover {
+    background-color: yellow; 
+}
+
+
+
+
+
 
 .burger_redbox {
     display: flex;
@@ -52,18 +102,20 @@ justify-content: center;
 .burger_cards {
     display: flex;
     justify-content: space-evenly;
-    min-height: 30rem;
+    min-height: 17rem;
     max-width: 100%;
     color: red;
+    
 }
 
 .card {
     display: flex;
     flex-direction: column;
-    min-height: 10rem;
+    height: 25rem;
     max-width: 15rem;
     padding: 2rem;
-    margin-left: 2rem;
+    
+    
 }
 
 .card img {
@@ -82,9 +134,26 @@ justify-content: center;
     text-align: center;
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
+
+}
+
+.contain_text:hover {
+    color: black;
+text-decoration: underline;
+    background-color: antiquewhite;
+    cursor: pointer;
+
 }
 
 .link {
     text-decoration: none;
     color: red;
+}
+
+
+footer {
+    background-color: green;
+    height: 10rem;
+    width: 100%;
+    
 }
