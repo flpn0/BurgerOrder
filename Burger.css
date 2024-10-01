@@ -57,17 +57,18 @@ nav a:hover {
 
 
 
-.burger_redbox {
+.burger_redbox, .burger_orderbox {
     display: flex;
+    color: white;
     justify-content: space-between;
-color: white;
-background-color: red;
-min-height: 25rem;
-max-width: 100%;
-
+    background-color: red;
+    min-height: 25rem;
+    max-width: 100%;
 }
 
-.holding_picture {
+
+
+.holding_picture, .burger_oderpicture {
 display: flex;
 align-items: center;
 justify-content: center;
