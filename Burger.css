@@ -83,7 +83,7 @@ justify-content: center;
    
 }
 
-.picture {
+.picture, .burger_orderpicture  {
 
     height: 15rem;
     width: 15rem;
