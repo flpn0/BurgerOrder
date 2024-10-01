@@ -62,13 +62,19 @@ nav a:hover {
     color: white;
     justify-content: space-between;
     background-color: red;
-    min-height: 25rem;
     max-width: 100%;
 }
 
+.burger_redbox {
+    min-height: 25rem;
+}
+
+.burger_orderbox{
+    min-height: 25rem;
+}
 
 
-.holding_picture, .burger_oderpicture {
+.holding_picture {
 display: flex;
 align-items: center;
 justify-content: center;
@@ -149,6 +155,14 @@ text-decoration: underline;
 .link {
     text-decoration: none;
     color: red;
+}
+
+.forum {
+    display: flex;
+   align-items: center;
+   justify-content: center;
+   max-width: 50%;
+   max-height: 50%;
 }
 
 
