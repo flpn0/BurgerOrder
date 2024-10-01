@@ -1,9 +1,8 @@
-from flask import Flask
-
-app = Flask(__name__)
+from flask import Flask, render_template
+app = Flask(__name__, static_url_path="Burger.css")
 
 @app.route("/")
-def hello_mons():
+def home():
     with open('Burger.html', 'r') as fp:
         html = fp.read()
     return html
