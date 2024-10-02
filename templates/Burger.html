@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Burger.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="#">Våra burgare</a>
+    </nav>
+    <h1>Felix Fasande Hamburgare</h1>
+    <nav>
+        <a href="#">Rabatter</a>
+    </nav>
+</header>
+
+<div class="burger_redbox">
+    <div class="holding_picture">
+        <div class="picture">
+            <img src="{{ url_for('static', filename='Pictures/burger.png') }}" alt="burger">
+        </div>
+    </div>
+
+    <div class="text">
+        <div>
+            <h1>Kolla in Felixs fasansfulla rabatter!</h1>
+        </div>
+    </div>
+</div>
+
+<div class="heading">
+    <h1>Våra burgare</h1>
+</div>
+
+<div class="burger_cards">
+    <div class="card">
+        <img src="{{ url_for('static', filename='Pictures/Flygande_faran.png') }}" alt="Flygande faran">
+        <div class="contain_text">
+            <a class="link" href="oder.html?burger=flygande_faran"><h1>Flygande faran</h1></a>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="{{ url_for('static', filename='Pictures/Ghasten.png') }}" alt="Ghasten">
+        <div class="contain_text">
+            <a class="link" href="oder.html?burger=ghasten"><h1>Ghasten</h1></a>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="{{ url_for('static', filename='Pictures/Galna_burgaren.png') }}" alt="Galna burgaren">
+        <div class="contain_text">
+            <a class="link" href="oder.html?burger=galna_burgan"><h1>Galna burgan</h1></a>
+        </div>
+    </div>
+</div>
+
+<footer></footer>
+</body>
+</html>

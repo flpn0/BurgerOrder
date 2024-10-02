@@ -1,14 +1,13 @@
 from flask import Flask, render_template
-app = Flask(__name__, static_url_path="Burger.css")
+app = Flask(__name__, template_folder='templates')
 
 @app.route("/")
 def home():
-    with open('Burger.html', 'r') as fp:
-        html = fp.read()
-    return html
+    return render_template("Burger.html")
 
-@app.route("/buy")
+@app.route("/oder.html")
 def hello_mans():
-    with open('Burger.html', 'r') as fp:
-        html = fp.read()
-    return "kj"
+    return render_template("oder.html")
+
+if __name__ == "__main__":
+    app.run(debug=True)  

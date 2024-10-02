@@ -4,25 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="Burger.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Burger.css') }}">
     <script>
         function Show_Burgers(){
             const parameter = new URLSearchParams(window.location.search);
             const burger = parameter.get("burger");
             let picSrc;
             if (burger === "flygande_faran"){
-                picSrc = "Pictures/Flygande_faran.png";    
+                picSrc = "{{ url_for('static', filename='Pictures/Flygande_faran.png') }}";    
             } else if (burger === "ghasten") {
-                picSrc = "Pictures/Ghasten.png";
+                picSrc = "{{ url_for('static', filename='Pictures/Ghasten.png') }}";
             } else if (burger === "galna_burgan") {
-                picSrc = "Pictures/Galna_burgaren.png";
-            } else{
-                picSrc = "Pictures/no_image.png"
+                picSrc = "{{ url_for('static', filename='Pictures/Galna_burgaren.png') }}";
+            } else {
+                picSrc = "{{ url_for('static', filename='Pictures/no_image.png') }}";
             }
-            document.getElementById("burgerpic").src = picSrc
+            document.getElementById("burgerpic").src = picSrc;
         }
 
-    window.onload = Show_Burgers;
+        window.onload = Show_Burgers;
     </script>
 </head>
 <body>
@@ -38,10 +38,9 @@
     </header>
 
     <div class="burger_redbox"> 
-
         <div class="holding_picture">
             <div class="burger_orderpicture">
-                <img id="burgerpic" alt="Vald hamburagre" width="300">
+                <img id="burgerpic" src="{{ url_for('static', filename='Pictures/no_image.png') }}" alt="Vald hamburgare" width="300">
             </div>
         </div>
         
@@ -51,7 +50,7 @@
             </div>
         </div>
         
-        </div>
+    </div>
 
     <footer></footer>
 </body>
