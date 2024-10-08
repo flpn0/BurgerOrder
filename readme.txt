@@ -1,4 +1,5 @@
-kör
+sudo apt install python3-pip
+pip install Flask
 pip install -r requirements.txt
-kör sedan
+source venv/bin/activate
 flask --app Burger.py run
