@@ -10,16 +10,22 @@
             const parameter = new URLSearchParams(window.location.search);
             const burger = parameter.get("burger");
             let picSrc;
+            let name_of_burger
             if (burger === "flygande_faran"){
-                picSrc = "{{ url_for('static', filename='Pictures/Flygande_faran.png') }}";    
+                picSrc = "{{ url_for('static', filename='Pictures/Flygande_faran.png') }}";
+                name_of_burger = "Flygande Faran"
             } else if (burger === "ghasten") {
                 picSrc = "{{ url_for('static', filename='Pictures/Ghasten.png') }}";
+                name_of_burger = "Ghasten"
             } else if (burger === "galna_burgan") {
                 picSrc = "{{ url_for('static', filename='Pictures/Galna_burgaren.png') }}";
+                name_of_burger = "Galna Burgan"
             } else {
                 picSrc = "{{ url_for('static', filename='Pictures/no_image.png') }}";
+                name_of_burger = "No burger chosen"
             }
             document.getElementById("burgerpic").src = picSrc;
+            document.getElementById("Name_Of_Burger").textContent = name_of_burger
         }
 
         window.onload = Show_Burgers;
@@ -41,6 +47,7 @@
         <div class="holding_picture">
             <div class="burger_orderpicture">
                 <img id="burgerpic" src="{{ url_for('static', filename='Pictures/no_image.png') }}" alt="Vald hamburgare" width="300">
+                <h2 id = "Name_Of_Burger">No burger chosen</h2>
             </div>
         </div>
         
