@@ -1,6 +1,5 @@
 from flask import Flask, render_template, session, request
-from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import create_engine, ForeignKey, Column, String, Integer, CHAR
+from sqlalchemy import create_engine, Column, Integer
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
@@ -55,8 +54,16 @@ def order():
         order = Order(cheese, dressing, onion, patty, pickles)
         session.add(order)
         session.commit()
-        return order_post()
+        order_id = order.id
+        return order_confirmation(order_id)
     return render_template("BurgerOrderer.html")
+
+@app.route("/OrderConfirmation.html")
+def order_confirmation(order_id):
+
+    order = session.query(Order).get(order_id)
+
+    return render_template("OrderConfirmation.html", order=order, order_id=order_id)
 
 if __name__ == "__main__":
     app.run(debug=True)  

@@ -6,7 +6,33 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='Burger.css') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Confirmation</title>
+    <script>
+        function Show_Burgers(){
+            const parameter = new URLSearchParams(window.location.search);
+            const burger = parameter.get("burger");
+            let picSrc;
+            let name_of_burger
+            if (burger === "flygande_faran"){
+                picSrc = "{{ url_for('static', filename='Pictures/Flygande_faran.png') }}";
+                name_of_burger = "Flygande Faran"
+            } else if (burger === "ghasten") {
+                picSrc = "{{ url_for('static', filename='Pictures/Ghasten.png') }}";
+                name_of_burger = "Ghasten"
+            } else if (burger === "galna_burgan") {
+                picSrc = "{{ url_for('static', filename='Pictures/Galna_burgaren.png') }}";
+                name_of_burger = "Galna Burgan"
+            } else {
+                picSrc = "{{ url_for('static', filename='Pictures/no_image.png') }}";
+                name_of_burger = "No burger chosen"
+            }
+            document.getElementById("burgerpic").src = picSrc;
+            document.getElementById("Name_Of_Burger").textContent = name_of_burger
+        }
+
+        window.onload = Show_Burgers;
+    </script>
 </head>
+
 <body>
 
 <header>
@@ -22,13 +48,26 @@
 <div class="burger_redbox">
     <h2>Tack för din beställning, följande har du beställt:</h2>
     <div class="box" id="imageBox">
-        <p>Image will be displayed here later.</p>
+        <div class="holding_picture">
+            <div class="burger_orderpicture">
+                <img id="burgerpic" src="{{ url_for('static', filename='Pictures/no_image.png') }}" alt="Vald hamburgare" width="300">
+                <h2 id = "Name_Of_Burger">No burger chosen</h2>
+            </div>
+        </div>
     </div>
-    
+
     <div class="box" id="textBox">
-        <p>Text will be displayed here later.</p>
+        <p>Order ID: {{order_id}}</p>
+        <p>Pickles: {{order.pickles}}</p>
+        <p>Cheese: {{order.cheese}}</p>
+        <p>Patty: {{order.patty}}</p>
+        <p>Dressing: {{order.dressing}}</p>
     </div>
+
+
 </div>
+
+
 
 <footer>
     <p>&copy; Felix Fasande Hamburgare</p>
