@@ -44,10 +44,11 @@
         <a href="#">Rabatter</a>
     </nav>
 </header>
-
-<div class="burger_redbox">
+<div class="order_conformation">
     <h2>Tack för din beställning, följande har du beställt:</h2>
-    <div class="box" id="imageBox">
+</div>
+<div class="burger_redbox3">
+    <div class="orderd_burger">
         <div class="holding_picture">
             <div class="burger_orderpicture">
                 <img id="burgerpic" src="{{ url_for('static', filename='Pictures/no_image.png') }}" alt="Vald hamburgare" width="300">
@@ -56,12 +57,14 @@
         </div>
     </div>
 
-    <div class="box" id="textBox">
-        <p>Order ID: {{order_id}}</p>
-        <p>Pickles: {{order.pickles}}</p>
-        <p>Cheese: {{order.cheese}}</p>
-        <p>Patty: {{order.patty}}</p>
-        <p>Dressing: {{order.dressing}}</p>
+    <div class="order_info">
+        <form>
+        <p class="spacing">Order ID: {{order_id}}</p>
+        <p class="spacing">Pickles: {{order.pickles}}</p>
+        <p class="spacing">Cheese: {{order.cheese}}</p>
+        <p class="spacing">Patty: {{order.patty}}</p>
+        <p class="spacing">Dressing: {{order.dressing}}</p>
+        </form>
     </div>
 
 

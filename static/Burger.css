@@ -54,10 +54,7 @@ nav a:hover {
 
 
 
-
-
-
-.burger_redbox, .burger_orderbox {
+.burger_redbox,  .burger_redbox2, .burger_redbox3 {
     display: flex;
     color: white;
     justify-content: space-between;
@@ -83,6 +80,9 @@ nav a:hover {
     padding-top: 6rem;
     padding-left: 5rem;
 }
+
+
+
 
 .picture  {
 
@@ -167,6 +167,14 @@ nav a:hover {
     
 }
 
+.burger_redbox2 {
+    display: flex;
+    justify-content: center;
+    height: 58rem;
+    align-items: center;
+}
+
+
 .contain_text {
     width: 100%;
     padding-top: 0.5rem;
@@ -189,12 +197,16 @@ text-decoration: underline;
     color: red;
 }
 
+
 .forum {
     display: flex;
    align-items: center;
    justify-content: center;
    min-width: 50%;
    max-height: 50%;
+   
+   
+  
 }
 
 .ordermeny {
@@ -213,9 +225,73 @@ text-decoration: underline;
     flex-direction: column;
 }
 
+.buttons h3 {
+    margin-top: 2rem;
+}
+
 form {
     display: flex;
     flex-direction: column;
+    
+
+}
+
+
+
+.burger_redbox3{
+        display: flex;
+        justify-content: center;
+        height: 58rem;
+        align-items: center;
+}
+
+.order_conformation {
+
+    width: 100%;
+    background-color: red;
+    color: white;
+    padding-top: 2rem;
+    text-align: center;
+    font-size: x-large;
+}
+
+.orderd_burger, .order_info {
+width: 18rem;
+height: 100%;
+justify-content: unset;
+
+}
+
+.orderd_burger {
+justify-content: right;
+margin-left: 20rem;
+
+}
+
+.order_info {
+    height: 23rem;
+    width: 15rem;
+    margin: 0 auto;
+    background-color: white;
+    color: black;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-bottom: 20rem;
+    font-size: xx-large;
+
+}
+
+.spacing{
+
+padding: 1rem;
+
+}
+
+.box2, h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 }
 
 footer {
