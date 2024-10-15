@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='Burger.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
     <script>
         function Show_Burgers(){
             const parameter = new URLSearchParams(window.location.search);
@@ -31,50 +32,49 @@
         window.onload = Show_Burgers;
     </script>
 </head>
-<body>
-    
-    <header>
-        <nav>
-            <a href="MenuStore.html">Våra burgare</a>
-        </nav>
-        <h1>Felix Fasande Hamburgare</h1>
-        <nav>
-            <a href="#">Rabatter</a>
-        </nav>
-    </header>
 
-    <div class="burger_redbox2"> 
+<body>
+
+<header>
+    <nav>
+        <a href="StartMenu.html">Våra burgare</a>
+    </nav>
+    <h1>Felix Fasande Hamburgare</h1>
+    <nav>
+        <a href="#">Rabatter</a>
+    </nav>
+</header>
+<div class="order_conformation">
+    <h2>Tack för din beställning, följande har du beställt:</h2>
+</div>
+<div class="burger_redbox3">
+    <div class="orderd_burger">
         <div class="holding_picture">
             <div class="burger_orderpicture">
                 <img id="burgerpic" src="{{ url_for('static', filename='Pictures/no_image.png') }}" alt="Vald hamburgare" width="300">
                 <h2 id = "Name_Of_Burger">No burger chosen</h2>
             </div>
         </div>
-        
-        <div class="forum">
-            <div class="ordermeny">
-                <div class="buttons"> 
-                    <h3>Tillbehör</h3>
-                    <form action="#" method="POST">
-                        <label for="quantity">Pickles:</label>
-                        <input type="number" id="pickles" name="pickles" min="0" max="5" value="3">
-                        <label for="quantity">Cheese:</label>
-                        <input type="number" id="cheese" name="cheese" min="0" max="5" value="1">
-                        <label for="quantity">patty:</label>
-                        <input type="number" id="patty" name="patty" min="0" max="5" value="1">
-                        <label for="quantity">Onion:</label>
-                        <input type="number" id="onion" name="onion" min="0" max="5" value="3">
-                        <label for="quantity">Dressing:</label>
-                        <input type="number" id="dressing" name="dressing" min="0" max="5" value="1">
-                        <input type="submit" value="Submit">
-                      </form>
-                </div>
-                
-            </div>
-        </div>
-        
     </div>
 
-    <footer></footer>
+    <div class="order_info">
+        <form>
+        <p class="spacing">Order ID: {{order_id}}</p>
+        <p class="spacing">Pickles: {{order.pickles}}</p>
+        <p class="spacing">Cheese: {{order.cheese}}</p>
+        <p class="spacing">Patty: {{order.patty}}</p>
+        <p class="spacing">Dressing: {{order.dressing}}</p>
+        </form>
+    </div>
+
+
+</div>
+
+
+
+<footer>
+    <p>&copy; Felix Fasande Hamburgare</p>
+</footer>
+
 </body>
 </html>

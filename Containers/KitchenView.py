@@ -35,14 +35,14 @@ session = Session()
 
 @app.route("/")
 def home():
-    return render_template("MenuStore.html")
+    return render_template("StartMenu.html")
 
 def order_post():
     print(request.form)
     return request.form
 
 @app.route("/BurgerOrderer.html", methods=["GET", "POST"])
-def order():
+def MenuStore():
     if request.method == "POST":
 
         cheese = request.form.get("cheese")
