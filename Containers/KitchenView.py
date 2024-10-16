@@ -1,4 +1,4 @@
-from flask import Flask, render_template, session, request
+from flask import Flask, render_template, session, request, make_response
 from sqlalchemy import create_engine, Column, Integer
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
@@ -55,8 +55,24 @@ def MenuStore():
         session.add(order)
         session.commit()
         order_id = order.id
-        return order_confirmation(order_id)
-    return render_template("BurgerOrderer.html")
+    
+        resp = make_response(order_confirmation(order_id))
+        resp.set_cookie("cheese", cheese)
+        resp.set_cookie("dressing", dressing)
+        resp.set_cookie("onion", onion)
+        resp.set_cookie("patty", patty)
+        resp.set_cookie("pickles", pickles)
+        return resp
+
+    
+    cheese = request.cookies.get("cheese", 1)
+    dressing = request.cookies.get("dressing", 1)
+    onion = request.cookies.get("onion", 3)
+    patty = request.cookies.get("patty", 1)
+    pickles = request.cookies.get("pickles", 3)
+
+
+    return render_template("BurgerOrderer.html", cheese=cheese, dressing=dressing, onion=onion, patty=patty, pickles=pickles)
 
 @app.route("/OrderConfirmation.html")
 def order_confirmation(order_id):
