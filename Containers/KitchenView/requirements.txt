@@ -1,0 +1,9 @@
+Flask==3.0.3
+Flask-SQLAlchemy==3.0.0
+SQLAlchemy==2.0.0
+blinker==1.8.2
+certifi==2024.8.30
+charset-normalizer==3.4.0
+click==8.1.7
+exceptiongroup==1.2.2
+psycopg2==2.9.3

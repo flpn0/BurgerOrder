@@ -1,0 +1,27 @@
+services:
+  kitchenview:
+    image: kitchenview
+    build: ./Containers/KitchenView
+    ports:
+      - 5000:5000
+    environment:
+      - DATABASE_URL=postgresql://kitchenview:kitchenview@postgres:5432/kitchenview
+    depends_on:
+      - postgres
+
+  burger-orderer:
+    image: burger-orderer
+    build: ./Containers/BurgerOrderer
+    ports:
+      - 8009:8000
+    environment:
+      - DATABASE_URL=postgresql://kitchenview:kitchenview@postgres:5432/kitchenview
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_USER: kitchenview
+      POSTGRES_PASSWORD: kitchenview
+      POSTGRES_DB: kitchenview
