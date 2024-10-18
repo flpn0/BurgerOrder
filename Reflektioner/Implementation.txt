@@ -1,0 +1,96 @@
+Implement Summary:
+
+Group participants:
+Fabian Svedberg, Felix Hammarström, Oliver Blomqvist, Stefan Ungureanu
+
+GitHub link:
+https://github.com/flpn0/BurgerOrder
+
+1. Project implementations:
+
+1.1 The Project As A Whole:
+    Our first thought was to make a simple website without css and concentrate on the API and mechanics of the website. 
+    However, remembering our past experiences in HTML, CSS and JAVA, we decided to split the work down the middle, so that two people made the website and the other two made the API. 
+    In doing this we were able to achieve a working full fledged website within the deadline. 
+    After looking into how we were going to do this, we set up a plan on using Java as mentioned before, 
+    as one of the group members who were tasked with making the API had past experience in modding minecraft with the language. 
+    However, after some research and discussion with our teacher we understood that using “Flask” with Python would be the simplest way of achieving our goal, 
+    we then decided to change up the plan and go with HTML, CSS and PYTHON.
+
+1.2 Every Container:
+    We have two containers, one container for the first page where you decide what burger you want and then what ingredients you want. 
+    And another container for the order confirmation page where you get an order id and get to see what burger and ingredients you chose.
+	
+1.3 Every Module:
+    In both the containers we have HTML and CSS files which makes our website stand out because of its use of color, image files, different fonts and more, resulting in the feeling of an authentic website. 
+    We also have python files which contain the API and python files that test the API files. 
+    Then, of course, we also have a dockerfile in every container with a requirements.txt so the docker container system is all set up and working. 
+    Outside the containers we also have another test file that tests the database and we also have a docker-compose file that manages and defines our multi container system. 
+
+2. Your experience while working on the project:
+
+2.1 What went good: 
+    During the development of the project we faced challenges that were easy to solve as well as challenges that were a bit more tricky. 
+    The HTML and the CSS were a walk in the park, we in the group had all studied these languages in school before so we were able to complete the basic website and its layout within only a couple hours of work. 
+    Also, that everybody in the group had their own task not only made our workflow effective but also cut the confusion and more planning to the minimum as we all knew what we had to do. 
+    To use Flask with PYTHON to set up a venv was easy but later we realized we weren’t supposed to have the whole program run on a venv so we changed to using docker later. 
+    Docker was a bit tricky to set up but when you understood how it worked it wasn’t too hard. 
+
+2.2 What went less good:
+    First of all we hadn’t understood that we had to have our HTML files in a specific folder called “template” and our CSS files in a folder called “static”. 
+    We had to do this so we would be able to connect the HTML and CSS to our API so it would show on our website, because of how Flask works. 
+    Another problem that occurred was that after moving the files one of the members encountered a problem with the github, which took about 2 hours to solve. 
+    Another problem was that we never got around to using branches with Github, which made it a little less effective because we all pushed our changes to main. 
+    However, because we had such good planning, we were able to almost never get affected by this because we all worked within our own separate files, 
+    and had good communication if we had to do any changes in another member's file. 
+    This led to us working like we had branches in our head, but now after we’re done, it definitely would be better to use branches in the future. 
+    We also had problems with the getting the database to work, we tried two different times both with SQLAlchemy, 
+    where the first attempt just had us go in a loop where we first got a error, then when fixing that problem we got another error and to fix that error we had to remove what fixed the first error. 
+    After this we restarted and used a different method, this time it worked and it was easier to understand. When trying to implement some function of the program to use cookies, 
+    we implemented it wrong firstly, but never realized until one of our members saw the code and realized it was set up correctly in the python file, 
+    but there was no cookie code in the HTML file where it was supposed to do something.
+
+2.3 How did you solve the problems? What could you have done differently?
+    We researched and read about SQLAlchemy with flask and understood we had to put our HTML files and CSS files in the before mentioned folders to get it to work. 
+    This also took some time going back and forth testing different ways to link the template and static folder to the API but in the end we got it to work. 
+    Now we had to link and connect the HTML and CSS in a different way. This was the old way of linking them before setting up the API and moving the files into folders: 
+    <link rel=”stylesheet” href=”burger.css”>. 
+    But after reading more about flask in python we understood that we had to link the files like this: 
+    <link rel=”stylesheet” href=”{{ url_for(“static”, filename=”burger.css”) }}>. 
+    To solve the database problem, we just tried a different solution after reading more about the different ways you could make one. 
+    After we realized  the cookie code wasn’t working, we spent about 30 minutes of a bit of trial and error testing different solutions while inspecting our website in our browser to see if the cookies got added correctly.
+
+    What we could’ve done differently was to read more and research about the things we didn’t already know how to do before starting to work on it. 
+    Instead of just heading straight into it with no idea of what to exactly do. An example of this was the database. 
+    In the future it would also be good to read the project instructions completely in detail so we didn’t have to realize on one of the last days that there was a lot still left to do. 
+    For example, not to use venv to run the project but instead using docker, move all the files in the project to set up the container system and do all the testing and debugging.
+
+2.4 What issues weren’t solved, why not:
+    We were able to solve all the problems that faced us, but it sure took its time sometimes. 
+    For example the database took about 1 week between starting to look into it until it was completed. 
+    The implementation of Docker and containers took a day, and the debugging and testing took another day.
+
+3. Your experiences about working with containers:
+3.1 What went good:
+    We never had much time to work with containers as we implemented them only a few days before the project was due to turn in, because as i mentioned before we never realized we had to use docker and containers. 
+    But after the implementation it was really easy and made handling the project a smooth experience as everything was nicely and neatly organized. 
+    For the rest of the time working on the project, it made it really easy not to accidentally mess with anyone's code as it was easy to give all the members their own files where they worked on the rest of the project within their own little space.
+
+3.2 What went less good:
+    We found it somehow hard to set up so it took some time before everything was working as it should. 
+    The tight time frame was stressful and in the future we would start working on the project a lot earlier to give ourselves more time if any mistakes and misunderstandings happen again.
+    When we split the original python file into two as we had to have two containers, we now use the same model which links to the database at two different places in the code. 
+    This means there are two sources of truth, which, inturn, means that if we changed something in one of the models we have to change it on the other model too otherwise the whole program would crash. 
+
+
+3.3 How did you solve the problems? What could you have done differently?
+	To set up the docker and get it working correctly we had some trial and error but the teacher python example helped a lot and both official and unofficial guides online were really easy to follow. 
+    What we could have done differently was to read the project instructions more clearly so we would’ve understood that even python users would use Docker in the project and give ourselves more time of error before the project's deadline. 
+    As it would be smart to expect that something would go wrong close to the deadline and then work to be done a week before it so you have time to change stuff if there would be any need for it. 
+    As we now would’ve needed. Fortunately we had just enough time to set up the containers and still have time for the debugging and tests.
+
+3.4 What issues weren’t solved, why not:
+    We weren't able to solve the two sources of truth problem because of a lack of remaining time. 
+    The project, of course, works the way it is right now but it's just unnecessary code in one of the python API files right now. 
+    To fix this, we could’ve broken the model out so that both classes use the same model constructors instead of it being in both files.
+

@@ -1,7 +1,10 @@
+"""
+Kitchen view API code
+"""
+
 from flask import Flask, render_template, session, request
 from sqlalchemy import create_engine, Column, Integer
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker, declarative_base
 import os
 
 Base = declarative_base()
@@ -22,7 +25,7 @@ class Order(Base):
 
     def __init__(self, cheese, dressing, onion, patty, pickles):
         """
-        This makes a constructor theat should make every row faster and easier to read
+        This makes a constructor that should make every row faster and easier to read
         """
 
         self.cheese = cheese
@@ -38,8 +41,8 @@ class Order(Base):
         personal_order = f"{self.cheese}, {self.dressing}, {self.onion}, {self.patty}, {self.pickles}"
         return personal_order
       
-DATABASE_URL = os.environ.get('DATABASE_URL', 'sqlite:///mydb.db') #Specifies what database we want to use for this
-engine = create_engine(DATABASE_URL, echo=True) #This runs create table SQL commands
+DATABASE_URL = os.environ.get('DATABASE_URL', 'sqlite:///mydb.db') # Specifies what database we want to use for this
+engine = create_engine(DATABASE_URL, echo=True) # This runs create table SQL commands
 Base.metadata.create_all(bind=engine)
 
 Session = sessionmaker(bind=engine)
@@ -51,8 +54,9 @@ def order_confirmation():
     This gets the user order ingridients and the order_id to print, then it prints it on the OrderConfirmation site so the user know what they ordered and what order id they have
     """
     order_id = request.args.get("order_id")
-    print(order_id)
-    order = session.query(Order).get(order_id)
+    order = None
+    if order_id:
+        order = session.get(Order, order_id)
     return render_template("OrderConfirmation.html", order=order, order_id=order_id)
 
 if __name__ == "__main__":

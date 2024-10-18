@@ -29,6 +29,12 @@
         }
 
         window.onload = Show_Burgers;
+
+        function ingredients_onchange(event, name){
+            var value = event.target.value
+            console.log(name, value)
+            document.cookie = `${name}=${value}`;
+        }
     </script>
 </head>
 <body>
@@ -57,15 +63,15 @@
                     <h3>Tillbehör</h3>
                     <form action="#" method="POST">
                         <label for="quantity">Pickles:</label>
-                        <input type="number" id="pickles" name="pickles" min="0" max="5" value="{{ pickles }}">
+                        <input onchange="ingredients_onchange(event, 'pickles')" type="number" id="pickles" name="pickles" min="0" max="5" value="{{ pickles }}">
                         <label for="quantity">Cheese:</label>
-                        <input type="number" id="cheese" name="cheese" min="0" max="5" value="{{ cheese }}">
+                        <input onchange="ingredients_onchange(event, 'cheese')" type="number" id="cheese" name="cheese" min="0" max="5" value="{{ cheese }}">
                         <label for="quantity">patty:</label>
-                        <input type="number" id="patty" name="patty" min="0" max="5" value="{{ patty }}">
+                        <input onchange="ingredients_onchange(event, 'patty')" type="number" id="patty" name="patty" min="0" max="5" value="{{ patty }}">
                         <label for="quantity">Onion:</label>
-                        <input type="number" id="onion" name="onion" min="0" max="5" value="{{ onion }}">
+                        <input onchange="ingredients_onchange(event, 'onion')" type="number" id="onion" name="onion" min="0" max="5" value="{{ onion }}">
                         <label for="quantity">Dressing:</label>
-                        <input type="number" id="dressing" name="dressing" min="0" max="5" value="{{ dressing }}">
+                        <input onchange="ingredients_onchange(event, 'dressing')" type="number" id="dressing" name="dressing" min="0" max="5" value="{{ dressing }}">
                         <input type="submit" value="Submit">
                       </form>
                 </div>

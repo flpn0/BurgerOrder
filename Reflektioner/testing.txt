@@ -1,0 +1,62 @@
+Debugging Summary:
+
+Group participants:
+Fabian Svedberg, Felix Hammarström, Oliver Blomqvist, Stefan Ungureanu
+
+GitHub link:
+https://github.com/flpn0/BurgerOrder
+
+1. What we are testing:
+    In BurgerOrderer we are testing if you can add an order of a burger, check if the website exists, check if you can send in an order. 
+    And that we redirect correctly (that there is an order on our other service (KitchenView)). In KitchenView we check if the order exists, 
+    and if you have the wrong order id or no order id, you get back that there is no order on that. 
+    In test_order we do some database tests and test the creation of a database. 
+    We also test the database model so it worlds and that we feed it with the right type of data
+
+2. Brief summary of how you have completed the tests:
+    We have completed the tests by using “Pytest” and making a test python file in every container so we could test all the aspects of our work. 
+    We have also included a RUN command for Pytest in our dockerfiles so when you build the project a test will be run 
+    and if you wish to run it again you just have to place yourself in the BurgerOrderer map and type Pytest. 
+
+3. Latest Test Session Print Out:
+===========================test session starts ===========================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0
+rootdir: /home/fef/burgerorder/BurgerOrder
+collected 7 items
+
+Containers/BurgerOrderer/test_burger_order.py ..                  [ 28%]
+Containers/KitchenView/test_kitchenview.py ...                    [ 71%]
+Containers/test_order.py ..                                       [100%]
+
+============================7 passed in 0.34s ============================
+
+4. What Went Good When Writing Automated Unit Tests:
+    It was definitely hard to get going with writing the automated unit tests as you had to have a certain level of understanding what to test and how to test everything. 
+    We had some prior experience about the testing, but this required a bit more then we already knew. 
+    After watching some explanation videos, listening to the lesson where we talked about how we should go about thinking when doing this and researching the subject we managed to get going. 
+    And the more we managed to get the Automatic Tests to work the more we understood how the whole thing should look like in the end. 
+    It did take a long time, but fortunately, we had it done before the deadline.
+
+5. What Went Less Well When Writing Automated Unit Tests:
+    As I said before it was hard to get going, but there was also a lot of trial and error (as you would expect), 
+    but the Pytest returned what was wrong with the testing and you just had to try again and research the problem. 
+    When testing the endpoints we had some problems as the code was a bit difficult for us, this took a lot of time. 
+    But now, in the future, we understand how to write code like this and won't have to spend as much time on it again.
+
+6. How did you fix the problems? What could you have done differently?
+    To fix the problems we got, as we wrote the code, when something wasn’t working correctly, we fixed everything, as mentioned earlier, by trial and error. 
+    Just reading what the Terminal said went wrong, trying to fix it and then researching more about it if we couldn’t find out what went wrong by ourselves. 
+    In the future we should probably get an even higher understanding of testing. We had some testing experience before starting this, 
+    but it would’ve been better if all of our members knew more about it, and spent a bit more time getting to know how to do it.
+
+7. What didn’t you manage to solve? Why not?
+    Right now there is no easy way to access the latest order done inside of the database test session, in test_order.py. 
+    Right now we just take, for example, order 1 and test that, but if there’s already an order 1 in the database, the test would fail as it probably wouldn’t have the correct values. 
+    In the future this would probably be a good idea to fix that and make the test work correctly during the testing session. 
+    However, this setup obviously works right now, but it would just be for good measure to take the latest order made within the testing session instead of hard coding what order to use. 
+    This wasn’t fixed because of the time frame, so in the future we should definitely have spent a bit more time on the testing side of the project.
+
+8. Link to Induviduell debug sessions:
+    There is no way to link that in a document like this but check under the date “10/17” in our private logbooks. 
+    (Fabian Svedberg, Felix Hammarström, Oliver Blomqvist, Stefan Ungureanu)
+

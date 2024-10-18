@@ -2,7 +2,6 @@ FROM python:3.8-slim
 
 WORKDIR /app
 
-# Install system dependencies for psycopg2
 RUN apt-get update && apt-get install -y \
     libpq-dev gcc
 
@@ -11,7 +10,9 @@ RUN pip install --upgrade pip
 RUN pip3 install -r requirements.txt
 
 COPY . .
-EXPOSE 8000
+EXPOSE 8009
 ENV PYTHONUNBUFFERED="yes"
 
-ENTRYPOINT ["python3", "app.py"]
+RUN pytest
+
+ENTRYPOINT ["python3", "burger_order.py"]

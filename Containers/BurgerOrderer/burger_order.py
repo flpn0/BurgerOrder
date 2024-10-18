@@ -1,7 +1,9 @@
+"""
+BurgerOrderer and StartMenu API code
+"""
 from flask import Flask, render_template, session, request, redirect
 from sqlalchemy import create_engine, Column, Integer
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker, declarative_base
 import os
 
 Base = declarative_base()
@@ -37,8 +39,8 @@ class Order(Base):
         personal_order = f"{self.cheese}, {self.dressing}, {self.onion}, {self.patty}, {self.pickles}"
         return personal_order
       
-DATABASE_URL = os.environ.get('DATABASE_URL', 'sqlite:///mydb.db') #Specifies what database we want to use for this
-engine = create_engine(DATABASE_URL, echo=True) #This runs create table SQL commands
+DATABASE_URL = os.environ.get('DATABASE_URL', 'sqlite:///mydb.db') # Specifies what database we want to use for this
+engine = create_engine(DATABASE_URL, echo=True) # This runs create table SQL commands
 Base.metadata.create_all(bind=engine)
 
 Session = sessionmaker(bind=engine)
@@ -92,4 +94,4 @@ def MenuStore():
     return render_template("BurgerOrderer.html", cheese=cheese, dressing=dressing, onion=onion, patty=patty, pickles=pickles)
 
 if __name__ == "__main__":
-    app.run(debug=True, port=8000, host="0.0.0.0")
+    app.run(debug=True, port=8009, host="0.0.0.0")

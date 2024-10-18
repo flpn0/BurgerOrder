@@ -13,7 +13,7 @@ services:
     image: burger-orderer
     build: ./Containers/BurgerOrderer
     ports:
-      - 8009:8000
+      - 8009:8009
     environment:
       - DATABASE_URL=postgresql://kitchenview:kitchenview@postgres:5432/kitchenview
     depends_on:

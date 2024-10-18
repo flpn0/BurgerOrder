@@ -12,4 +12,6 @@ COPY . .
 EXPOSE 8000
 ENV PYTHONUNBUFFERED="yes"
 
-ENTRYPOINT ["python3", "app.py"]
+RUN pytest
+
+ENTRYPOINT ["python3", "kitchenview.py"]

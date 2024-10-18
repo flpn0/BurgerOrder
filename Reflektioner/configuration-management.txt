@@ -1,0 +1,80 @@
+Configuration management Summary:
+
+Group participants:
+Fabian Svedberg, Felix Hammarström, Oliver Blomqvist, Stefan Ungureanu
+
+GitHub link:
+https://github.com/flpn0/BurgerOrder
+
+1.1 Brief summary about configuration management and why it is used:
+    The configuration management building stones are based primarily on organization, structure and documentation. 
+    With a larger number of users comes a larger responsibility, more things that can go wrong and more help is needed to keep everything going smoothly. 
+    Some great benefits of using a configuration manager are boosting effectiveness and productivity by reducing manual labor and error, an easier distribution of updates, 
+    preventing compatibility issues and easier integration in popular programs such as SQL servers, DNS, WDS and certificate services. 
+    To sum it all up, a configuration manager is not only convenient but also a tool that helps the users and the administrators get a better overview and structure over their work.
+
+1.2 Sources:
+
+https://learn.microsoft.com/sv-se/mem/configmgr/core/understand/introduction
+Summary:
+    The Microsoft Configuration Manager is a part of the Microsoft intune family, and a tool for managing devices in an organization. 
+    It helps with tasks like deploying software and operating systems, and managing updates. It works alongside other Microsoft services such as Active Directory, Windows Server, DNS and WDS. 
+    The tool makes IT management easier by automating tasks and providing real-time actions and analytics.
+
+    There are two main branches: the Configuration Manager console for administrators to manage tasks, and the Software Center, which lets users install apps and updates.
+
+    Another key aspect of The Configuration Manager is its configuration management features. 
+    It allows teams to set compliance rules, manage security settings and monitor devices to ensure they meet organizational standards.
+
+https://it-ord.idg.se/ord/configuration-management/
+Summary:
+    Configuration management organizes large projects by tracking components, responsibilities, changes, compliance with client requirements, and costs.
+
+https://glossary.istqb.org/sv_SE/term/konfigurationshantering
+Summary:
+    Configuration management is a discipline that commands and monitors configuration items by identifying, documenting, 
+    and controlling their characteristics, managing changes, and verifying compliance with requirements.
+
+2. Brief summary about the most common workflow with git, including those
+2.1 git commands used:
+    Usually the most common workflow with git starts with forking the repository to your own github account, then cloning the repository with “git clone [the repository link]”. 
+    After this you would typically create a branch with “git checkout -b [branch name]” as this is the best way not to accidentally overwrite any other programmers changes or files. 
+    After this you run “git add .” and then “git commit -m [description]”, then push your changes to your forked repository on Github by running “git push origin [branch name]”. 
+    After all this you create a pull request from your branch on the original repository and then someone who keeps track of all the projects changes can approve the change which will result in your branch getting merged into the main branch. 
+    It would also be a good idea to sync your fork periodically with the original repository to stay up to date.
+
+
+2.2 What went well:
+    Using Github allowed us to work simultaneously on the project without interfering with each other's work. 
+    Also we were able to work both together as a group in real life using our laptops, 
+    but using Github also allowed us to transfer our changes to the project and then pull them onto our personal computers and sit in a Discord call online and work on the project together from home.
+
+2.3 What went worse:
+    When using Github, one of the better traits is that you can work in branches to make your work easier. 
+    Unfortunately we never got around to using that, which made the risk of conflicts higher and made it harder to manage different changes happening simultaneously. 
+    Some members pushed to git through the git desktop app and some other people pushed to the git repository through Visual Studio Code's own function. 
+    This made the different pushes a bit different as the one pushing through Visual Studio Code couldn’t give his push a Header/Summary which made the push list look inconsistent when looking through it. 
+    Using the Visual Studio Code’s own function also messed everything up for a couple hours once after deleting a couple files and then closing the project, 
+    which resulted in the files disappearing and he had to push to pull the changes he needed to continue his work. This was just confusing for everyone, 
+    and we were scared our work would get deleted, but it got solved eventually without anything happening to the code. 
+    We also encountered pull request issues, where the pull request was overwriting the changes you had done before. 
+    This was because we didn't work in branches and made requests to the main branch when we committed.
+
+
+
+2.4 How did the issues got solved, what could’ve been done better:
+    The member encountering the issue with the visual studio code problem was scared of pulling and pushing as he thought that would delete all of his work on the API and all of the HTML and CSS members work. 
+    However after some time and searching the web for answers he pushed and pulled and everything was back to normal. 
+    We solved the pull request issue first by stashing the changes we did and then pulling the origin and manually integrating the stashed changes for the html and css code. 
+    But we ran into another issue and were met with an error message making the pull request impossible. We soon notice you can't have stashed changes and continue making changes in the newly pull commit and then make a pull request. 
+    We soon solved the issue på discarding our last changes we already had implemented and stashing the new changes. In the future, 
+    after day one of starting working with git again, we will use branches as it is one of the best ways to improve your work structure, 
+    the most effective way to work as a group and the one thing that will make your work easier as there is less risk of file conflictions when pushing. 
+
+
+2.5 What issues weren’t solved, why not:
+	That we never got around to using branches. And why we never got around to that was because we thought we had our project so well planned we wouldn’t need to use them. 
+    But as you noticed we just mentioned a problem that occurred because we all pushed to main without branches, so we were nothing but wrong about our planning. 
+    Another reason is that we never got around to read the instructions thoroughly before it was a bit late to start using branches. 
+    So we should’ve definitely done that and started using branches directly from the get-go, something we will do in the future.
+

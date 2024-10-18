@@ -5,3 +5,4 @@ __pycache__/
 mydb.db
 my_venv/
 my_flask_venv/
+.pytest_cache/
