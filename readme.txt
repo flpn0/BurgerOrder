@@ -10,7 +10,7 @@
    (Here you will also notice we have an Automatic Pytest that will run our test code that checks if everything is working correctly)
    (Also after the project is built you will only have to do step 6 (make run) to make it run again after you shut it down by pressing SHIFT+C)
 
-6. After the project is built run "make run"
+6. After the project is built run "make run" (if any error occure after the first time running make run, try running it again)
 
 7. After it is up and running paste "http://127.0.0.1:8009/" into your browser (or "localhost:8009)
 
